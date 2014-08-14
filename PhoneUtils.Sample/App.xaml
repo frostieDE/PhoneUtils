@@ -1,0 +1,5 @@
+<Application x:Class="PhoneUtils.Sample.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:PhoneUtils.Sample">
+  <Application.Resources>
+    <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:PhoneUtils.Sample.ViewModel" />
+  </Application.Resources>
+</Application>
