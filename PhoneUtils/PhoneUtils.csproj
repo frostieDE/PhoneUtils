@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions\OpenFlyoutAction.cs" />
+    <Compile Include="Behaviors\BindKeyToCommandBehavior.cs" />
     <Compile Include="Behaviors\BindTextboxBehavior.cs" />
     <Compile Include="Behaviors\FocusTextboxBehavior.cs" />
     <Compile Include="Behaviors\UpdateSelectedItemsBehavior.cs" />

@@ -19,6 +19,7 @@ namespace PhoneUtils.Sample.ViewModel
         {
             ShowCases = new SortedObservableCollection<ShowCase>();
             ShowCases.Add(new ShowCase { Title = "SortedObservableCollection", Description = "Show how to use the SortedObservableCollection", TargetPage = "SortedView" });
+            ShowCases.Add(new ShowCase { Title = "TextBox Behaviors", Description = "Show how to use the behaviors for the TextBox control", TargetPage = "BehaviorsView" });
 
             OpenShowCaseCommand = new RelayCommand<ShowCase>(sc => Messenger.Send<NavigateMessage>(new NavigateMessage { TargetPage = sc.TargetPage }));
         }

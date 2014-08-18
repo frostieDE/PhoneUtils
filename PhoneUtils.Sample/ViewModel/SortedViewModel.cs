@@ -1,9 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using PhoneUtils.Collections;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace PhoneUtils.Sample.ViewModel
 {
@@ -41,8 +39,6 @@ namespace PhoneUtils.Sample.ViewModel
 
         public RelayCommand RemoveSelectionCommand { get; private set; }
 
-        public RelayCommand RemoveAllCommand { get; private set; }
-
         public ObservableCollection<string> SelectedItems { get; private set; }
 
         public SortedViewModel()
@@ -72,15 +68,13 @@ namespace PhoneUtils.Sample.ViewModel
 
             RemoveSelectionCommand = new RelayCommand(() =>
             {
-                Items.RemoveRange(SelectedItems);
+                foreach (var item in SelectedItems)
+                {
+                    Items.Remove(item);
+                }
 
                 SelectedItems.Clear();
             }, () => SelectedItems.Count > 0);
-
-            RemoveAllCommand = new RelayCommand(() =>
-            {
-                Items.RemoveRange(new List<string> { "test" });
-            });
         }
     }
 }

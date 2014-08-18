@@ -47,6 +47,7 @@ namespace PhoneUtils.Sample.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<SortedViewModel>();
+            SimpleIoc.Default.Register<BehaviorsViewModel>();
         }
 
         public MainViewModel Main
@@ -58,7 +59,12 @@ namespace PhoneUtils.Sample.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<SortedViewModel>(); }
         }
-        
+
+        public BehaviorsViewModel Behaviors
+        {
+            get { return ServiceLocator.Current.GetInstance<BehaviorsViewModel>(); }
+        }
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

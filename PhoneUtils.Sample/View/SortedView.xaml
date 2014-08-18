@@ -84,10 +84,6 @@
             <AppBarButton Label="delete"
                           Icon="Delete"
                           Command="{Binding RemoveSelectionCommand}" />
-
-            <AppBarButton Label="delete all"
-                          Icon="Delete"
-                          Command="{Binding RemoveAllCommand}" />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
