@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Specialized;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace PhoneUtils.Collections
@@ -8,7 +8,7 @@ namespace PhoneUtils.Collections
     /// An RangeObservableCollection<typeparamref name="T" /> which is sorted.
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class SortedObservableCollection<T> : RangeObservableCollection<T> where T : class, IComparable<T>
+    public class SortedObservableCollection<T> : ObservableCollection<T> where T : class, IComparable<T>
     {
         /// <summary>
         /// Gets or sets the sort order
