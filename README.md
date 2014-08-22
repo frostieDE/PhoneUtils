@@ -48,7 +48,7 @@ These are useful messages to be used with MvvmLights `Messenger` implementation.
 
 1. Install package using NuGet:
 
-	PM> Install-Package WinRTUtils
+	`Install-Package WinRTUtils`
 	
 2. Reference "Behaviors SDK (XAML)" to your project. This SDK comes with Visual Studio.
 
