@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>WinRTUtils</id>
+    <version>1.0.0</version>
+    <title>WinRTUtils</title>
+    <authors>Marcel Marnitz</authors>
+    <licenseUrl>https://github.com/frostieDE/WinRTUtils/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/frostieDE/WinRTUtils</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A collection of useful behaviors, commands and converters which might be essential for MVVM apps.</description>
+    <releaseNotes>This is the initial release. Feel free to contribute on GitHub.</releaseNotes>
+    <copyright>Copyright 2014</copyright>
+    <tags>windows runtime phone wp81 win81 winrt utils</tags>
+  </metadata>
+  
+  <files>
+	<file src="..\src\WinRTUtils.WindowsPhone\bin\Release\WinRTUtils.*" target="lib\wpa" />
+	<file src="..\src\WinRTUtils.Windows\bin\Release\WinRTUtils.*" target="lib\netcore45" />
+  </files>
+</package>

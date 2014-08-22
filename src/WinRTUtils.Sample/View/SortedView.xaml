@@ -1,0 +1,89 @@
+﻿<Page
+    x:Class="WinRTUtils.Sample.View.SortedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinRTUtils.Sample.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:ib="using:WinRTUtils.Behaviors"
+    DataContext="{Binding Source={StaticResource Locator}, Path=Sorted}"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="WINRTUTILS.SAMPLE" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="sorted collection" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1"
+              Margin="19,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBox Text="{Binding NewItem, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                <i:Interaction.Behaviors>
+                    <ib:BindTextboxBehavior />
+                </i:Interaction.Behaviors>
+            </TextBox>
+
+            <Button Command="{Binding AddCommand}"
+                    Grid.Column="1"
+                    Margin="10,0,0,0">
+                add
+            </Button>
+        </Grid>
+
+        <ListView Grid.Row="2" x:Name="ContentRoot"
+                  ItemsSource="{Binding Items}"
+                  IsItemClickEnabled="True">
+             
+            <i:Interaction.Behaviors>
+                <ib:SelectionModeBehavior SelectionMode="Multiple" IsSelectionEnabled="{Binding IsSelectionEnabled}" />
+                <ib:UpdateSelectedItemsBehavior SelectedItems="{Binding SelectedItems}" />
+            </i:Interaction.Behaviors>
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="Margin" Value="19,0" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding}"
+                               Style="{StaticResource TitleTextBlockStyle}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="selection"
+                          Icon="List"
+                          Command="{Binding ToggleSelectionCommand}" />
+
+            <AppBarButton Label="delete"
+                          Icon="Delete"
+                          Command="{Binding RemoveSelectionCommand}" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
