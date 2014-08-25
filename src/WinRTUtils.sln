@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTUtils.WindowsPhone", "WinRTUtils.WindowsPhone\WinRTUtils.WindowsPhone.csproj", "{08C9CB60-FADF-4802-9824-42D8BC3F03B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTUtils.Sample.WindowsPhone", "WinRTUtils.Sample\WinRTUtils.Sample.WindowsPhone.csproj", "{18898B92-FB0A-42E6-A338-FAF4BCD5EB83}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTUtils.Sample.WindowsPhone", "WinRTUtils.Sample.WindowsPhone\WinRTUtils.Sample.WindowsPhone.csproj", "{18898B92-FB0A-42E6-A338-FAF4BCD5EB83}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinRTUtils.Test", "WinRTUtils.Test\WinRTUtils.Test.csproj", "{5E8AF450-1254-46E4-A410-CDE22D6CAFF9}"
 EndProject
