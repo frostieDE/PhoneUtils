@@ -34,6 +34,8 @@ namespace WinRTUtils.Sample.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<SortedViewModel>();
             SimpleIoc.Default.Register<BehaviorsViewModel>();
+            SimpleIoc.Default.Register<ProgressIndicatorViewModel>();
+            SimpleIoc.Default.Register<IndeterminateProgressIndicatorViewModel>();
         }
 
         public MainViewModel Main
@@ -49,6 +51,16 @@ namespace WinRTUtils.Sample.ViewModel
         public BehaviorsViewModel Behaviors
         {
             get { return ServiceLocator.Current.GetInstance<BehaviorsViewModel>(); }
+        }
+
+        public ProgressIndicatorViewModel ProgressIndicator
+        {
+            get { return ServiceLocator.Current.GetInstance<ProgressIndicatorViewModel>(); }
+        }
+
+        public IndeterminateProgressIndicatorViewModel IndeterminateProgressIndicator
+        {
+            get { return ServiceLocator.Current.GetInstance<IndeterminateProgressIndicatorViewModel>(); }
         }
 
         public static void Cleanup()

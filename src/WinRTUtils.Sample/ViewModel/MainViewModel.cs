@@ -20,6 +20,7 @@ namespace WinRTUtils.Sample.ViewModel
             ShowCases = new SortedObservableCollection<ShowCase>();
             ShowCases.Add(new ShowCase { Title = "SortedObservableCollection", Description = "Show how to use the SortedObservableCollection", TargetPage = "SortedView" });
             ShowCases.Add(new ShowCase { Title = "TextBox Behaviors", Description = "Show how to use the behaviors for the TextBox control", TargetPage = "BehaviorsView" });
+            ShowCases.Add(new ShowCase { Title = "ProgressIndicator Behavior", Description = "Show how to use the behaviors for progress indicator", TargetPage = "ProgressIndicatorView" });
 
             OpenShowCaseCommand = new RelayCommand<ShowCase>(sc => Messenger.Send<NavigateMessage>(new NavigateMessage { TargetPage = sc.TargetPage }));
         }

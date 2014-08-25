@@ -89,6 +89,7 @@
     <Compile Include="Behaviors\BindKeyToCommandBehavior.cs" />
     <Compile Include="Behaviors\BindTextboxBehavior.cs" />
     <Compile Include="Behaviors\FocusTextboxBehavior.cs" />
+    <Compile Include="Behaviors\ProgressIndicatorBehavior.cs" />
     <Compile Include="Behaviors\UpdateSelectedItemsBehavior.cs" />
     <Compile Include="Behaviors\SelectionModeBehavior.cs" />
     <Compile Include="Collections\RangeObservableCollection.cs" />

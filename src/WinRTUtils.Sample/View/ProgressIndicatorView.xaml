@@ -1,0 +1,70 @@
+﻿<Page
+    x:Class="WinRTUtils.Sample.View.ProgressIndicatorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinRTUtils.Sample.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:ib="using:WinRTUtils.Behaviors"
+    DataContext="{Binding Source={StaticResource Locator}, Path=ProgressIndicator}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <i:Interaction.Behaviors>
+        <ib:ProgressIndicatorBehavior IsVisible="{Binding IsVisible}"
+                                      Text="{Binding Text}"
+                                      ProgressValue="{Binding ProgressValue}" />
+    </i:Interaction.Behaviors>
+    
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="WINRTUTILS.SAMPLE" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="progress indicator" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" x:Name="ContentRoot" Padding="19,9.5,19,0">
+            
+            <StackPanel>
+                
+                <TextBox Header="Text"
+                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                    <i:Interaction.Behaviors>
+                        <ib:BindTextboxBehavior />
+                    </i:Interaction.Behaviors>
+                </TextBox>
+                
+                <Slider Value="{Binding ProgressValue, Mode=TwoWay}"
+                        Minimum="0" Maximum="1"
+                        StepFrequency="0.1"/>
+                
+                <Button Command="{Binding ShowIndicatorCommand}">show indicator</Button>
+                <Button Command="{Binding HideIndicatorCommand}">hide indicator</Button>
+                
+                <Button>
+                    IndeterminateProgressIndicator
+                    
+                    <i:Interaction.Behaviors>
+                        <ic:EventTriggerBehavior EventName="Click">
+                            <ic:NavigateToPageAction TargetPage="WinRTUtils.Sample.View.IndeterminateProgressIndicatorView" />
+                        </ic:EventTriggerBehavior>
+                    </i:Interaction.Behaviors>
+                </Button>
+            </StackPanel>
+            
+        </ScrollViewer>
+    </Grid>
+</Page>
