@@ -15,6 +15,7 @@ A collection of useful behaviors, commands and converters which might be essenti
 * `FocusTextboxBehavior`: a behavior that sets the focus to the attached `TextBox` after the Loaded event is fired
 * `SelectionModeBehavior`: emulates a `IsSelectionEnabled` property for `ListView`s
 * `UpdateSelectedItemsBehavior`: a behavior that automatically synchronises selected items of `ListView`s to a given List (inside the ViewModel)
+* `ProgressIndicatorBehavior`: a behavior which makes the ProgressIndicator accessible through XAML (Windows Phone only)
 
 ### Collections
 
