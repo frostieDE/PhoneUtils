@@ -87,6 +87,9 @@
     <Compile Include="View\BehaviorsView.xaml.cs">
       <DependentUpon>BehaviorsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FlyoutView.xaml.cs">
+      <DependentUpon>FlyoutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\IndeterminateProgressIndicatorView.xaml.cs">
       <DependentUpon>IndeterminateProgressIndicatorView.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="View\BehaviorsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FlyoutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

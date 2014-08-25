@@ -23,7 +23,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Messages\SampleMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SampleMessageWithItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BehaviorsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\FlyoutViewModel.cs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\IndeterminateProgressIndicatorViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProgressIndicatorViewModel.cs" />

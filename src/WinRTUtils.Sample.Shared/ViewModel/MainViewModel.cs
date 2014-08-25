@@ -18,9 +18,10 @@ namespace WinRTUtils.Sample.ViewModel
         public MainViewModel(IMessenger messenger) : base(messenger)
         {
             ShowCases = new SortedObservableCollection<ShowCase>();
-            ShowCases.Add(new ShowCase { Title = "SortedObservableCollection", Description = "Show how to use the SortedObservableCollection", TargetPage = "SortedView" });
-            ShowCases.Add(new ShowCase { Title = "TextBox Behaviors", Description = "Show how to use the behaviors for the TextBox control", TargetPage = "BehaviorsView" });
-            ShowCases.Add(new ShowCase { Title = "ProgressIndicator Behavior", Description = "Show how to use the behaviors for progress indicator (Windows Phone only)", TargetPage = "ProgressIndicatorView" });
+            ShowCases.Add(new ShowCase { Title = "SortedObservableCollection", Description = "Shows how to use the SortedObservableCollection", TargetPage = "SortedView" });
+            ShowCases.Add(new ShowCase { Title = "TextBox Behaviors", Description = "Shows how to use the behaviors for the TextBox control", TargetPage = "BehaviorsView" });
+            ShowCases.Add(new ShowCase { Title = "ProgressIndicator Behavior", Description = "Shows how to use the behaviors for progress indicator (Windows Phone only)", TargetPage = "ProgressIndicatorView" });
+            ShowCases.Add(new ShowCase { Title = "OpenFlyoutAction", Description = "Shows how to use the OpenFlyoutAction", TargetPage = "FlyoutView" });
 
             OpenShowCaseCommand = new RelayCommand<ShowCase>(sc => Messenger.Send<NavigateMessage>(new NavigateMessage { TargetPage = sc.TargetPage }));
         }

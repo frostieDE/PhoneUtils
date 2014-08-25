@@ -36,6 +36,7 @@ namespace WinRTUtils.Sample.ViewModel
             SimpleIoc.Default.Register<BehaviorsViewModel>();
             SimpleIoc.Default.Register<ProgressIndicatorViewModel>();
             SimpleIoc.Default.Register<IndeterminateProgressIndicatorViewModel>();
+            SimpleIoc.Default.Register<FlyoutViewModel>();
         }
 
         public MainViewModel Main
@@ -61,6 +62,11 @@ namespace WinRTUtils.Sample.ViewModel
         public IndeterminateProgressIndicatorViewModel IndeterminateProgressIndicator
         {
             get { return ServiceLocator.Current.GetInstance<IndeterminateProgressIndicatorViewModel>(); }
+        }
+
+        public FlyoutViewModel Flyout
+        {
+            get { return ServiceLocator.Current.GetInstance<FlyoutViewModel>(); }
         }
 
         public static void Cleanup()
