@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5eb416d0-6db6-47c7-adce-39f1a3fc5457</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>WinRTUtils.Sample</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Messages\SampleMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BehaviorsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\IndeterminateProgressIndicatorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ProgressIndicatorViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SortedViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+</Project>
