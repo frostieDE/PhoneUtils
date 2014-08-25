@@ -55,7 +55,7 @@ These are useful messages to be used with MvvmLights `Messenger` implementation.
 
 ## Documentation
 
-Currently only available as comments in the source code. You may take a look at the sample project (even though it is a Windows Phone app, you should be able to transfer the code to a Windows Store app)
+Currently only available as comments in the source code. You may take a look at the sample project which is a universal project, so you have samples for both Windows and Windows Phone 8.1.
 
 ## Contribute!
 
