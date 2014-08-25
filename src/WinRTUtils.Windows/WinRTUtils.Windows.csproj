@@ -113,6 +113,18 @@
     <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\BindKeyToCommandBehavior.cs">
       <Link>Behaviors\BindKeyToCommandBehavior.cs</Link>
     </Compile>
+    <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\BindTextboxBehavior.cs">
+      <Link>Behaviors\BindTextboxBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\FocusTextboxBehavior.cs">
+      <Link>Behaviors\FocusTextboxBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\SelectionModeBehavior.cs">
+      <Link>Behaviors\SelectionModeBehavior.cs</Link>
+    </Compile>
+    <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\UpdateSelectedItemsBehavior.cs">
+      <Link>Behaviors\UpdateSelectedItemsBehavior.cs</Link>
+    </Compile>
     <Compile Include="..\WinRTUtils.WindowsPhone\Collections\RangeObservableCollection.cs">
       <Link>Collections\RangeObservableCollection.cs</Link>
     </Compile>
