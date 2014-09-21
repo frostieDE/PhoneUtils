@@ -41,11 +41,7 @@
             <StackPanel>
                 
                 <TextBox Header="Text"
-                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                    <i:Interaction.Behaviors>
-                        <ib:BindTextboxBehavior />
-                    </i:Interaction.Behaviors>
-                </TextBox>
+                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 
                 <Slider Value="{Binding ProgressValue, Mode=TwoWay}"
                         Minimum="0" Maximum="1"

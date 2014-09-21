@@ -40,11 +40,7 @@
             <StackPanel>
 
                 <TextBox Header="Text"
-                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                    <i:Interaction.Behaviors>
-                        <ib:BindTextboxBehavior />
-                    </i:Interaction.Behaviors>
-                </TextBox>
+                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Button Command="{Binding ShowIndicatorCommand}">show indicator</Button>
                 <Button Command="{Binding HideIndicatorCommand}">hide indicator</Button>

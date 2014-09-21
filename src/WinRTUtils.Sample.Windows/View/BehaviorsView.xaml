@@ -52,20 +52,15 @@
         <StackPanel Grid.Row="1"
                     Margin="39,0">
 
-            <TextBlock Text="FocusTextboxBehavior / BindTextboxBehavior"
+            <TextBlock Text="FocusTextboxBehavior"
                            Style="{StaticResource TitleTextBlockStyle}" />
 
             <TextBox PlaceholderText="Insert some text here..."
-                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
+                         Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Behaviors>
-                    <!-- Of course, you can also use the behaviors seperately -->
-                    <ib:BindTextboxBehavior />
                     <ib:FocusTextboxBehavior />
                 </i:Interaction.Behaviors>
             </TextBox>
-
-            <TextBlock Text="{Binding Text}"
-                           Style="{StaticResource BaseTextBlockStyle}"/>
 
             <TextBlock Text="BindKeyToCommandBehavior"
                            Style="{StaticResource TitleTextBlockStyle}" />

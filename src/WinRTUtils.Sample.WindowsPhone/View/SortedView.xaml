@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:i="using:Microsoft.Xaml.Interactivity"
     xmlns:ib="using:WinRTUtils.Behaviors"
+    xmlns:cmd="using:WinRTUtils.Commands"
     DataContext="{Binding Source={StaticResource Locator}, Path=Sorted}"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -37,11 +38,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <TextBox Text="{Binding NewItem, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                <i:Interaction.Behaviors>
-                    <ib:BindTextboxBehavior />
-                </i:Interaction.Behaviors>
-            </TextBox>
+            <TextBox Text="{Binding NewItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
             <Button Command="{Binding AddCommand}"
                     Grid.Column="1"
@@ -52,7 +49,8 @@
 
         <ListView Grid.Row="2" x:Name="ContentRoot"
                   ItemsSource="{Binding Items}"
-                  IsItemClickEnabled="True">
+                  IsItemClickEnabled="True"
+                  cmd:ItemClickCommand.Command="{Binding ToggleSelectionCommand}">
              
             <i:Interaction.Behaviors>
                 <ib:SelectionModeBehavior SelectionMode="Multiple" IsSelectionEnabled="{Binding IsSelectionEnabled}" />

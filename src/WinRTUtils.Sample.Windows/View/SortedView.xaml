@@ -59,11 +59,7 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <TextBox Text="{Binding NewItem, Mode=TwoWay, UpdateSourceTrigger=Explicit}">
-                    <i:Interaction.Behaviors>
-                        <ib:BindTextboxBehavior />
-                    </i:Interaction.Behaviors>
-                </TextBox>
+                <TextBox Text="{Binding NewItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Button Command="{Binding AddCommand}"
                     Grid.Column="1"
