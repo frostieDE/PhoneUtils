@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -33,6 +34,18 @@ namespace WinRTUtils.Collections
         public Func<string, bool> ItemHasChanged = null;
 
         public SortedObservableCollection()
+            : base()
+        {
+            BindEvents();
+        }
+
+        public SortedObservableCollection(IEnumerable<T> collection)
+            : base(collection)
+        {
+            BindEvents();
+        }
+
+        private void BindEvents()
         {
             CollectionChanged += (s, e) =>
             {

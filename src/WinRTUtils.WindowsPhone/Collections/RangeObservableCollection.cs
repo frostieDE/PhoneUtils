@@ -19,6 +19,13 @@ namespace WinRTUtils.Collections
     /// <typeparam name="T"></typeparam>
     public class RangeObservableCollection<T> : ObservableCollection<T>
     {
+        public RangeObservableCollection()
+            : base() { }
+
+        public RangeObservableCollection(IEnumerable<T> collection)
+            : base(collection)
+        { }
+
         /// <summary>
         /// Adds a range of items to the collection.
         /// </summary>
