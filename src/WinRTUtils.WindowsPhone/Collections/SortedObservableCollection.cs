@@ -40,8 +40,12 @@ namespace WinRTUtils.Collections
         }
 
         public SortedObservableCollection(IEnumerable<T> collection)
-            : base(collection)
         {
+            foreach (var item in collection)
+            {
+                Add(item);
+            }
+
             BindEvents();
         }
 

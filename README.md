@@ -11,7 +11,6 @@ A collection of useful behaviors, commands and converters which might be essenti
 ### Behaviors
 
 * `BindKeyToCommandBehavior`: a behavior that executes a given command if a certain key is pressed
-* `BindTextboxBehavior`: enables two-mode binding for `Textbox.Text` property
 * `FocusTextboxBehavior`: a behavior that sets the focus to the attached `TextBox` after the Loaded event is fired
 * `SelectionModeBehavior`: emulates a `IsSelectionEnabled` property for `ListView`s
 * `UpdateSelectedItemsBehavior`: a behavior that automatically synchronises selected items of `ListView`s to a given List (inside the ViewModel)

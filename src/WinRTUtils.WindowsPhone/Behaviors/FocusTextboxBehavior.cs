@@ -14,14 +14,19 @@ namespace WinRTUtils.Behaviors
             AssociatedObject = associatedObject;
 
             var textbox = AssociatedObject as TextBox;
+            var passwordbox = AssociatedObject as PasswordBox;
 
             if (textbox != null)
             {
-                textbox.Loaded += textbox_Loaded;
+                textbox.Loaded += OnLoaded;
+            }
+            else if (passwordbox != null)
+            {
+                passwordbox.Loaded += OnLoaded;
             }
         }
 
-        private void textbox_Loaded(object sender, RoutedEventArgs e)
+        private void OnLoaded(object sender, RoutedEventArgs e)
         {
             var textbox = sender as TextBox;
 
@@ -34,10 +39,15 @@ namespace WinRTUtils.Behaviors
         public void Detach()
         {
             var textbox = AssociatedObject as TextBox;
+            var passwordbox = AssociatedObject as PasswordBox;
 
             if (textbox != null)
             {
-                textbox.Loaded -= textbox_Loaded;
+                textbox.Loaded -= OnLoaded;
+            }
+            else if (passwordbox != null)
+            {
+                passwordbox.Loaded -= OnLoaded;
             }
         }
     }
