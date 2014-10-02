@@ -113,6 +113,9 @@
     <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\BindKeyToCommandBehavior.cs">
       <Link>Behaviors\BindKeyToCommandBehavior.cs</Link>
     </Compile>
+    <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\FocusNextElementOnEnterBehavior.cs">
+      <Link>Behaviors\FocusNextElementOnEnterBehavior.cs</Link>
+    </Compile>
     <Compile Include="..\WinRTUtils.WindowsPhone\Behaviors\FocusTextboxBehavior.cs">
       <Link>Behaviors\FocusTextboxBehavior.cs</Link>
     </Compile>

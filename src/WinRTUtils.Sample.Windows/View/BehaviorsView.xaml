@@ -59,14 +59,16 @@
                          Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 <i:Interaction.Behaviors>
                     <ib:FocusTextboxBehavior />
+                    <ib:FocusNextElementOnEnterBehavior NextElement="{Binding ElementName=inputSearch}" />
                 </i:Interaction.Behaviors>
             </TextBox>
 
             <TextBlock Text="BindKeyToCommandBehavior"
-                           Style="{StaticResource TitleTextBlockStyle}" />
+                       Style="{StaticResource TitleTextBlockStyle}" />
 
             <TextBox PlaceholderText="Search"
-                         InputScope="Search">
+                     InputScope="Search"
+                     x:Name="inputSearch">
                 <i:Interaction.Behaviors>
                     <ib:BindKeyToCommandBehavior Key="Enter"
                                                      KeyEvent="KeyDown"
