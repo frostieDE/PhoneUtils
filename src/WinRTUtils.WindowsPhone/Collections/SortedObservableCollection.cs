@@ -58,7 +58,7 @@ namespace WinRTUtils.Collections
                     {
                         if (item is INotifyPropertyChanged)
                         {
-                            (item as INotifyPropertyChanged).PropertyChanged += SortedObservableCollection_PropertyChanged;
+                            (item as INotifyPropertyChanged).PropertyChanged += OnItemPropertyChanged;
                         }
                     }
                 }
@@ -69,14 +69,14 @@ namespace WinRTUtils.Collections
                     {
                         if (item is INotifyPropertyChanged)
                         {
-                            (item as INotifyPropertyChanged).PropertyChanged -= SortedObservableCollection_PropertyChanged;
+                            (item as INotifyPropertyChanged).PropertyChanged -= OnItemPropertyChanged;
                         }
                     }
                 }
             };
         }
 
-        private void SortedObservableCollection_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (ItemHasChanged != null && ItemHasChanged(e.PropertyName))
             {
