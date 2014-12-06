@@ -85,21 +85,91 @@ namespace WinRTUtils.Collections
                 if (item != null)
                 {
                     var index = IndexOf(item);
-                    var indexComp = index + 1;
 
-                    if (indexComp < Count)
+                    var indexPrev = index - 1;
+
+                    // Test previous item in collection
+                    if (indexPrev >= 0)
                     {
-                        var itemComp = this[indexComp];
-                        var comp = item.CompareTo(itemComp);
+                        var comp = Math.Sign(item.CompareTo(this[indexPrev]));
 
-                        if (SortOrder == SortOrderType.Ascending && comp == -1 ||
-                           SortOrder == SortOrderType.Descending && comp == 1)
+                        if ((SortOrder == SortOrderType.Ascending && comp == -1) ||
+                            (SortOrder == SortOrderType.Descending && comp == 1))
                         {
-                            Remove(item);
-                            Add(item);
+                            Rearrange(item);
+
+                            // no need to test next item as we have to rearrange
+                            return; 
+                        }
+                    }
+
+                    // Text next item in collection
+                    var indexNext = index + 1;
+
+                    if (indexNext < Count)
+                    {
+                        var comp = Math.Sign(item.CompareTo(this[indexNext]));
+
+                        if ((SortOrder == SortOrderType.Ascending && comp == 1) ||
+                            (SortOrder == SortOrderType.Descending && comp == -1))
+                        {
+                            Rearrange(item);
                         }
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Moves an item to the correct
+        /// position inside the list
+        /// </summary>
+        /// <param name="item"></param>
+        private void Rearrange(T item)
+        {
+            var oldIndex = IndexOf(item);
+            int newIndex = oldIndex;
+
+            var stopLoop = false;
+
+            for (int i = 0; i < this.Count && !stopLoop; i++)
+            {
+                if(i == oldIndex) {
+                    continue;
+                }
+
+                var compResult = Math.Sign(this[i].CompareTo(item));
+
+                if (compResult == 0 ||
+                    (compResult == 1 && SortOrder == SortOrderType.Ascending) ||
+                    (compResult == -1 && SortOrder == SortOrderType.Descending))
+                {
+                    newIndex = i;
+                    break;
+                }
+            }
+
+            if (oldIndex == newIndex)
+            {
+                /**
+                 * We did not find any item that is "less"
+                 * or "greater" than the item which is to be
+                 * moved
+                 * -> put it at the top/bottom of the collection
+                 */
+                if (SortOrder == SortOrderType.Ascending)
+                {
+                    newIndex = this.Count - 1;
+                }
+                else
+                {
+                    newIndex = 0;
+                }
+            }
+
+            if (oldIndex != newIndex)
+            {
+                Move(oldIndex, newIndex);
             }
         }
 
